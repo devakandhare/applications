@@ -20,6 +20,10 @@
         color: theme.$white-color;
         border-radius: 3px;
     }
+    button:hover {
+        opacity: 0.7;
+        cursor: pointer;
+    }
 }
 .tasks-container {
     width: 20%;
@@ -37,4 +41,11 @@
 }
 .task-completed {
     text-decoration: line-through;
+    color: green;
+}
+.task-checkbox:checked {
+    background: green !important;
+}
+.task-checkbox:disabled {
+    background: green !important;
 }

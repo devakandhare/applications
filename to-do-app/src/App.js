@@ -22,7 +22,7 @@ function App() {
         isDone: false,
       };
       setTask("");
-      return [...prevTasks, newTask];
+      return [newTask, ...prevTasks];
     });
   }
 
@@ -34,7 +34,12 @@ function App() {
     <React.Fragment>
       <div className="app">
         <div className="input-container">
-          <input type="text" value={task} onChange={handleChangeTask} />
+          <input
+            type="text"
+            value={task}
+            onChange={handleChangeTask}
+            onKeyUp={(e) => e.key === "Enter" && handleAddTask()}
+          />
           <button onClick={handleAddTask}>Add Me</button>
         </div>
         <Tasks tasks={tasks} markDone={markDone} />
