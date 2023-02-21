@@ -1,24 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Tasks from "./Tasks";
+import "./App.scss";
 
 function App() {
+  const [task, setTask] = useState("");
+  const [tasks, setTasks] = useState([]);
+
+  function markDone(taskId) {
+    setTasks((prevTasks) => {
+      return prevTasks.map((theTask) => ({
+        ...theTask,
+        isDone: theTask.id === taskId ? true : theTask.isDone,
+      }));
+    });
+  }
+  function handleAddTask() {
+    setTasks((prevTasks) => {
+      const newTask = {
+        id: new Date().getTime(),
+        description: task,
+        isDone: false,
+      };
+      setTask("");
+      return [...prevTasks, newTask];
+    });
+  }
+
+  function handleChangeTask(e) {
+    setTask(e.target.value);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <div className="app">
+        <div className="input-container">
+          <input type="text" value={task} onChange={handleChangeTask} />
+          <button onClick={handleAddTask}>Add Me</button>
+        </div>
+        <Tasks tasks={tasks} markDone={markDone} />
+      </div>
+    </React.Fragment>
   );
 }
 
