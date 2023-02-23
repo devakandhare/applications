@@ -1,0 +1,72 @@
+@use "./theme.scss" as theme;
+
+.app-container {
+  padding-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calculator-app {
+  width: 300px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+
+  .calculator-display {
+    height: 50px;
+    width: 100%;
+    background-color: theme.$color-black;
+    color: theme.$color-white;
+    text-align: right;
+    border-top: 1px solid theme.$border-color;
+    border-bottom: 1px solid theme.$border-color;
+    border-left: 1px solid theme.$border-color;
+  }
+  .calculator-row {
+    display: flex;
+    height: 50px;
+    width: 100%;
+    border-left: 1px solid theme.$border-color;
+    border-bottom: 1px solid theme.$border-color;
+    .calculator-cell {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 25%;
+      border-right: 1px solid theme.$border-color;
+      background-color: theme.$primary-cell-color;
+    }
+    .calculator-cell:hover{
+      background-color: #D0D3D4;
+      cursor: pointer;
+    }
+    .orange-cell {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 25%;
+      border-right: 1px solid theme.$border-color;
+      background-color: theme.$color-orange;
+    }
+    .orange-cell:hover{
+      background-color: #935116;
+      cursor: pointer;
+    }
+  }
+  .calculator-clear {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    background-color: grey;
+    border-bottom: 1px solid theme.$border-color;
+    border-left: 1px solid theme.$border-color;
+    border-right: 1px solid theme.$border-color;
+  }
+  .calculator-clear:hover{
+    background-color: #626567;
+    cursor: pointer;
+  }
+} 
