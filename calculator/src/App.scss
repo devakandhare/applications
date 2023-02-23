@@ -22,6 +22,10 @@
     border-top: 1px solid theme.$border-color;
     border-bottom: 1px solid theme.$border-color;
     border-left: 1px solid theme.$border-color;
+    .result {
+      margin-top: 15px;
+      margin-right: 10px;
+    }
   }
   .calculator-row {
     display: flex;
