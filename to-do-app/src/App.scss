@@ -1,0 +1,51 @@
+@use "./theme-color.scss" as theme;
+
+.app {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10%;
+}
+.input-container {
+    input {
+        padding: 5px;
+        margin: 10px;
+    }
+    button {
+        padding: 5px 15px;
+        margin: 10px;
+        background-color: theme.$primary-color;
+        border: 1px solid theme.$primary-color;
+        color: theme.$white-color;
+        border-radius: 3px;
+    }
+    button:hover {
+        opacity: 0.7;
+        cursor: pointer;
+    }
+}
+.tasks-container {
+    width: 20%;
+    padding-top: 10px;
+}
+.task {
+    display: flex;
+}
+.task-desc {
+    width: 100%;
+    display: inline;
+    text-align: left;
+    padding: 5px;
+    border-bottom: 1px dotted theme.$grey-color;
+}
+.task-completed {
+    text-decoration: line-through;
+    color: green;
+}
+.task-checkbox:checked {
+    background: green !important;
+}
+.task-checkbox:disabled {
+    background: green !important;
+}
