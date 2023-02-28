@@ -3,35 +3,41 @@
   height: 100vh;
   display: flex;
   justify-content: center;
-  padding-top: 30px;
-  //align-items: center;
+  padding-top: 150px;
 }
 
 .search-container {
 
-}
-.search {
-  display: flex;
-  height: 40px;
-  border: 2px solid grey;
-  border-radius: 7px;
-  padding-left: 5px;
+  .search {
+    display: flex;
+    height: 40px;
+    border: 2px solid grey;
+    border-radius: 7px;
+    padding-left: 5px;
+  
+    .search-text {
+      width: 300px;
+      outline: none;
+      border: none;
+      font-size: 1.5rem;
+    }
+    img {
+      padding: 10px;
+      background-color: grey;
+    }
+  }
+  .search-result-container {
+    padding-top: 10px;
+    max-height: 200px;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
 
-  .search-text {
-    width: 200px;
-    outline: none;
-    border: none;
-    font-size: 1.5rem;
+    .search-result {
+      padding: 3px 3px 3px 7px;
+      color: grey;
+      border-bottom: 1px dotted #CCD1D1;
+    }
   }
-  img {
-    padding: 10px;
-    background-color: grey;
-  }
-}
-.search-result-container {
-  padding-top: 10px;
-  .search-result {
-    padding: 3px;
-    color: grey;
-  }
+  
 }
