@@ -24,7 +24,11 @@ function App() {
               theState.name.toUpperCase().startsWith(searchText.toUpperCase())
             )
             .map((theState) => (
-              <div key={theState.id} className="search-result">
+              <div
+                key={theState.id}
+                className="search-result"
+                onClick={() => setSearchText(theState.name)}
+              >
                 {theState.name}
               </div>
             ))}

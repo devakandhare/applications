@@ -38,6 +38,11 @@
       color: grey;
       border-bottom: 1px dotted #CCD1D1;
     }
+    .search-result:hover{
+      cursor: pointer;
+      background-color: gray;
+      color: black;
+    }
   }
   
 }
