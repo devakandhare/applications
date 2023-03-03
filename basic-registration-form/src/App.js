@@ -44,7 +44,7 @@ function App() {
           value={info.email}
         />
         <button className="btn form-field" onClick={handleSubmit}>
-          Submit
+          Register
         </button>
       </div>
     </div>
